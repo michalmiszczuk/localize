@@ -1,2 +1,65 @@
-@import "global";
-@import "variables";
+@use "variables" as v;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 62.5%; // 1rem = 10px
+    font-weight: 400;
+    line-height: 1.6;
+    background-image: linear-gradient(to right bottom, v.$primary-dark, v.$primary-light);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: v.$grey-1;
+}
+
+.container{
+    min-height: 100vh;
+    padding: 10vh 5vw;
+    display:grid;
+    grid-template-columns: [list-start] minmax(5rem, 1fr) [list-end map-start] 
+    repeat(2, minmax(5rem, 1fr)) [map-end info-start]
+    minmax(5rem, 1fr) [info-end];
+    grid-template-rows: minmax(10rem, 1fr) auto minmax(10rem, 1fr);
+    gap: 1rem;
+    font-size: 1.6rem;
+}
+
+.item{
+    background-color: v.$primary-light;
+    border: 1px solid v.$accent-color;
+}
+
+.item1{
+    grid-column: list-start / list-end;
+    grid-row: 1 / -1;
+}
+
+.item2{
+    grid-column: map-start / map-end;
+}
+
+.item3{
+    grid-column: info-start / info-end;
+}
+
+.item4{
+    grid-column: map-start / info-end;
+}
+
+.item5{
+    grid-column: map-start / map-end;
+}
