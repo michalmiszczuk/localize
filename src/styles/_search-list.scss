@@ -16,3 +16,10 @@
         list-style: none;
     }
 }
+
+@media (max-width: var.$medium) {
+    .search-list__container{
+        grid-column: 1 / -1;
+        grid-row: 6 / 7;
+    }
+}

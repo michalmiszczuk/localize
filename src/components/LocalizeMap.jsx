@@ -2,16 +2,18 @@ import React from 'react';
 import { Map, Marker } from "pigeon-maps"
 
 
-function LocalizeMap({ gridPosition, header, location }) {
+function LocalizeMap({ gridPosition, header, location, fallbackMsg }) {
 
-    if (!location && header === "my location") return <div className={`${gridPosition} map__container`}>waiting data...</div>
-    if (!location && header === "last search") return <div className={`${gridPosition} map__container`}><span className='loading-animation'>waiting for</span></div>
-
+    if (!location) return (
+        <div className={`map__container ${gridPosition}`}>
+            <span className='loading-animation'>{fallbackMsg}</span>
+        </div>
+    )
     const coords = [location.latitude, location.longitude]
 
     return (
 
-        <div className={`${gridPosition} map__container`} data-header="My location">
+        <div className={`${gridPosition} map__container`} data-header={header}>
             <Map center={coords} defaultZoom={12}>
                 <Marker width={50} anchor={coords} />
             </Map>

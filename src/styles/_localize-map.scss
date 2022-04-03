@@ -1,6 +1,6 @@
 @use 'variables' as var;
 
-.map-grid-position{
+.map-1, .map-2{
     font-size: 1.2rem;
     font-weight: 300;
     grid-column: map-start / map-end;
@@ -22,5 +22,16 @@
         color: var.$grey-1;
         background-color: var.$grid-item-background;
         z-index: 10;
+    }
+}
+
+@media (max-width: var.$medium) {
+    .map-1{
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+    }
+    .map-2{
+        grid-column: 1 / -1;
+        grid-row: 4 / 5;
     }
 }

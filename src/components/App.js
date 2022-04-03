@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react";
-import {findCoordinates, findMyCoordinates} from "../api/localize";
 import ErrorToast from "./ErrorToast";
 import LocalizeMap from "./LocalizeMap";
 import LocationInfo from "./LocationInfo";
@@ -7,6 +6,7 @@ import SearchBar from "./SearchBar";
 import SearchList from "./SearchList";
 import Spinner from "./Spinner";
 
+import {findCoordinates, findMyCoordinates} from "../api/localize";
 import {v4 as uuidv4} from "uuid";
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
     fetchCoords();
   }, []);
 
-  if (!currentLocation) return <h1>LOADING...</h1>;
+  if (!currentLocation) return <Spinner />;
 
   const handleSearchOnMap = async query => {
     try {
@@ -44,11 +44,31 @@ function App() {
   return (
     <div className="container">
       <SearchList searchList={searchList} />
-      <LocalizeMap gridPosition="map-grid-position" header="my location" location={currentLocation} />
-      <LocationInfo gridPosition="item3" location={currentLocation} header="my location:" />
+      <LocalizeMap
+        gridPosition="map-1"
+        header="my location"
+        location={currentLocation}
+        fallbackMsg="waiting for data..."
+      />
+      <LocationInfo
+        location={currentLocation}
+        header="my location:"
+        fallbackMsg="waiting for search..."
+        gridPosition="lacation-1"
+      />
       <SearchBar onSearch={query => handleSearchOnMap(query)} />
-      <LocalizeMap gridPosition="map-grid-position" header="last search" location={searchList[0]} />
-      <LocationInfo gridPosition="item6" location={searchList[0]} header="last search:" />
+      <LocalizeMap
+        gridPosition="map-2"
+        header="last search"
+        location={searchList[0]}
+        fallbackMsg="waiting for search..."
+      />
+      <LocationInfo
+        location={searchList[0]}
+        header="last search:"
+        fallbackMsg="waiting for search..."
+        gridPosition="lacation-2"
+      />
       {errorMsg && <ErrorToast errorMsg={errorMsg} onClose={() => setErrorMsg("")} />}
       {isLoading && <Spinner />}
     </div>

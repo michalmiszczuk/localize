@@ -44,16 +44,16 @@ body {
     font-size: 1.6rem;
 }
 
-.item{
-    background-color: hsl(206, 45%, 20%, 0.7);
-    text-align: center;
+@media (max-width: 800px) {
+    .container{
+        padding: 1rem;
+        grid-template-columns: minmax(5rem, 1fr);
+        grid-template-rows: auto repeat(5, minmax(5rem, 1fr));
+        gap: 0.5rem;
+        font-size: 1rem;
+    }
 }
 
-
-
-.item3{
-    grid-column: info-start / info-end;
-}
 
 h2{
     font-size: 1rem;
@@ -61,3 +61,13 @@ h2{
     text-transform: uppercase;
 
 }
+
+.loading-animation{
+    animation: loading-opacity 3s infinite ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
