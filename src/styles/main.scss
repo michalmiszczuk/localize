@@ -3,6 +3,8 @@
 @use "location-info";
 @use "search-bar";
 @use "search-list";
+@use "error-toast";
+@use "spinner";
 
 *{
     margin: 0;

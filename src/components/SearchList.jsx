@@ -1,24 +1,21 @@
 import React from 'react';
 
-function SearchList({ searchListf }) {
+function SearchList({ searchList }) {
 
 
-    // if (searchList.length === 0) return <div className='search-list__container'>waiting for data...</div>
+    if (searchList.length === 0) return <div className='search-list__container'>No searches yet</div>
 
-    const searchList = [{ ip: "212.77.98.9", country_name: 'Poland', continent_name: "Europe", zip: "80-009" }]
+
     return (
         <div className='search-list__container'>
-            <ul>
-                {searchList.map(item => {
-                    <>
-                        <li>{item.ip}</li>
-                        <li>{item.country_name}</li>
-                        <li>{item}</li>
-                        <li>{item}</li>
-                    </>
-
-                })}
-            </ul>
+            <h2>List of all searches:</h2>
+            {searchList.map(item => {
+                return (
+                    <ul key={item.ip}>
+                        <li>{item.query}</li>
+                    </ul>
+                )
+            })}
         </div>
     );
 }

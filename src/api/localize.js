@@ -7,13 +7,12 @@ async function findCoordinates(ip) {
   return data;
 }
 
-console.log(process.env);
 async function findMyCoordinates() {
-  //   const {data} = await axios.get(
-  //     `http://api.ipstack.com/check?access_key=${apiKey}&fields=main`
-  //   );
-  //   console.log(data);
-  //   return data;
+  // const {data} = await axios.get(
+  //   `http://api.ipstack.com/check?access_key=${apiKey}&fields=main`
+  // );
+  // console.log(data);
+  // return data;
   return {
     city: "Wrocław",
     continent_name: "Europe",
