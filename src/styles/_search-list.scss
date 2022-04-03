@@ -1,7 +1,9 @@
+@use 'variables' as var;
+
 .search-list__container{
     grid-column: list-start / list-end;
     grid-row: 1 / -1;
-    background-color: hsl(206, 45%, 20%, 0.7);
+    background-color: var.$grid-item-background;
     padding: 1rem;
     font-size: 1.2rem;
     font-weight: 300;

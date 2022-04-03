@@ -3,7 +3,7 @@ import React from 'react';
 function LocationInfo({ location, gridPosition, header }) {
 
     if (!location && header === 'my location:') return <div className={`location-info__container ${gridPosition}`}>waiting for data...</div>
-    if (!location && header === 'last search:') return <div className={`location-info__container ${gridPosition}`}>waiting for search</div>
+    if (!location && header === 'last search:') return <div className={`location-info__container ${gridPosition}`}><span className='loading-animation'>waiting for search...</span></div>
 
     return (
         <div className={`location-info__container ${gridPosition}`}>

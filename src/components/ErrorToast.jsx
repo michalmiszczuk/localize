@@ -1,9 +1,10 @@
 import React from 'react';
 
-function ErrorToast({ errorMsg }) {
+function ErrorToast({ errorMsg, onClose }) {
     return (
         <div className='error-toast__container'>
-            {errorMsg}
+            <div className='error-msg'>{errorMsg}</div>
+            <button className='btn btn__toast-close' onClick={onClose}>close</button>
         </div>
     );
 }

@@ -1,11 +1,46 @@
+@use 'variables' as var;
+@use 'animations';
+
 .error-toast__container{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 15vh;
     background-color: hsl(0, 90%, 40%, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
+    text-align: center;
+    flex-flow: column;
+    justify-content: space-evenly;
+    animation: slide-down 1s forwards;
+    z-index: 20;
+}
+
+.error-msg{
+    margin-bottom: 1rem;
+}
+
+.btn{
+    font-weight: 200;
+    font-size: 1rem;
+    color: inherit;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5rem;
+    transition: all .2s;
+
+    &:focus, :active{
+        outline: none;
+        box-shadow: 0 0px 0px 5px var.$secondary;
+    }
+
+    &__toast-close{
+     background-color: hsl(0, 90%, 20%, 0.7);
+     &:hover{
+         background-color: hsl(0, 90%, 20%);
+         cursor: pointer;
+     }
+    }
 }

@@ -7,10 +7,12 @@ import SearchBar from "./SearchBar";
 import SearchList from "./SearchList";
 import Spinner from "./Spinner";
 
+import {v4 as uuidv4} from "uuid";
+
 function App() {
   const [currentLocation, setCurrentLocation] = useState();
   const [searchList, setSearchList] = useState([]);
-  const [loading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
@@ -27,12 +29,14 @@ function App() {
     try {
       setIsLoading(true);
       const data = await findCoordinates(query);
-      if (data.error) return alert(data.error.info);
-      setSearchList(prevList => [{...data, query}, ...prevList]);
-      setIsLoading(false);
-      console.log(data);
+      if (data.error) {
+        setErrorMsg(data.error.info);
+        return;
+      }
+      setSearchList(prevList => [{...data, query, id: uuidv4()}, ...prevList]);
     } catch (error) {
-      console.log(error);
+      setErrorMsg(error.message);
+    } finally {
       setIsLoading(false);
     }
   };
@@ -40,13 +44,13 @@ function App() {
   return (
     <div className="container">
       <SearchList searchList={searchList} />
-      <LocalizeMap gridPosition="item map-grid-position" header="my location" location={currentLocation} />
+      <LocalizeMap gridPosition="map-grid-position" header="my location" location={currentLocation} />
       <LocationInfo gridPosition="item3" location={currentLocation} header="my location:" />
       <SearchBar onSearch={query => handleSearchOnMap(query)} />
-      <LocalizeMap gridPosition="item map-grid-position" header="last search" location={searchList[0]} />
+      <LocalizeMap gridPosition="map-grid-position" header="last search" location={searchList[0]} />
       <LocationInfo gridPosition="item6" location={searchList[0]} header="last search:" />
-      {errorMsg && <ErrorToast errorMsg={errorMsg} />}
-      <Spinner />
+      {errorMsg && <ErrorToast errorMsg={errorMsg} onClose={() => setErrorMsg("")} />}
+      {isLoading && <Spinner />}
     </div>
   );
 }

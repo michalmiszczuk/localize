@@ -1,15 +1,26 @@
+@use 'variables' as var;
+
 .map-grid-position{
+    font-size: 1.2rem;
+    font-weight: 300;
     grid-column: map-start / map-end;
+    background-color: var.$grid-item-background;
 }
 
 .map__container{
-    overflow: hidden;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 
-.map__header{
-    font-size: 1rem;
-    text-transform: uppercase;
+    &:before{
+        content: attr(data-header);
+        position: absolute;
+        top: 0;
+        width: 100%;
+        text-align: center;
+        color: var.$grey-1;
+        background-color: var.$grid-item-background;
+        z-index: 10;
+    }
 }
-// .map-grid-position{
-//     grid-column: map-start / map-end;
-// }

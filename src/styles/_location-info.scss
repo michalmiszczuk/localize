@@ -1,5 +1,7 @@
+@use 'variables' as var;
+
 .location-info__container{
-    background-color: hsl(206, 45%, 0%, 0.7);
+    background-color: var.$grid-item-background;
     padding: 1rem;
     font-size: 1.2rem;
     font-weight: 300;
@@ -11,4 +13,13 @@
     li{
         list-style: none;
     }
+}
+
+.loading-animation{
+    animation: loading-opacity 3s infinite ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 }

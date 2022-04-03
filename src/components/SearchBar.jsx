@@ -4,9 +4,9 @@ function SearchBar({ onSearch }) {
     const [searchQuery, setSearchQuery] = useState('')
 
     return (
-        <div className='search-bar__container item item4'>
-            <input value={searchQuery} onChange={(e) => setSearchQuery(e.currentTarget.value)} />
-            <button onClick={() => onSearch(searchQuery)}>SEARCH</button>
+        <div className='search-bar__container'>
+            <input value={searchQuery} onChange={(e) => setSearchQuery(e.currentTarget.value)} placeholder="Type ip or domain..." />
+            <button className='btn search-btn' onClick={() => onSearch(searchQuery)}>SEARCH</button>
         </div>
     );
 }
