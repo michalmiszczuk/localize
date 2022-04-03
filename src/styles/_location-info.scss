@@ -1,0 +1,14 @@
+.location-info__container{
+    background-color: hsl(206, 45%, 0%, 0.7);
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+   
+    
+    li{
+        list-style: none;
+    }
+}

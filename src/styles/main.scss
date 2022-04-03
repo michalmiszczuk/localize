@@ -1,4 +1,8 @@
 @use "variables" as v;
+@use "localize-map";
+@use "location-info";
+@use "search-bar";
+@use "search-list";
 
 *{
     margin: 0;
@@ -39,18 +43,11 @@ body {
 }
 
 .item{
-    background-color: v.$primary-light;
-    border: 1px solid v.$accent-color;
+    background-color: hsl(206, 45%, 20%, 0.7);
+    text-align: center;
 }
 
-.item1{
-    grid-column: list-start / list-end;
-    grid-row: 1 / -1;
-}
 
-.item2{
-    grid-column: map-start / map-end;
-}
 
 .item3{
     grid-column: info-start / info-end;
@@ -60,6 +57,8 @@ body {
     grid-column: map-start / info-end;
 }
 
-.item5{
-    grid-column: map-start / map-end;
+h2{
+    font-size: 1.6rem;
+    font-weight: 200;
+
 }

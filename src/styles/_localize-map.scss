@@ -1,0 +1,15 @@
+.map-grid-position{
+    grid-column: map-start / map-end;
+}
+
+.map__container{
+    overflow: hidden;
+}
+
+.map__header{
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+// .map-grid-position{
+//     grid-column: map-start / map-end;
+// }
