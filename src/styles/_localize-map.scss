@@ -5,25 +5,25 @@
     background-color: var.$grid-item-background;
 }
 
-.map__container{
+.map{
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-}
 
-.map__header{
-    position: absolute;
-    font-size: 1.2rem;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    color: var.$grey-1;
-    background-color: hsl(216, 40%, 10%, 0.6);
-    padding: 0.5rem 0;
-    z-index: 10;
+    &__header{
+        position: absolute;
+        font-size: 1.2rem;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        color: var.$grey-1;
+        background-color: hsl(216, 40%, 10%, 0.6);
+        padding: 0.5rem 0;
+        z-index: 10;
+    }
 }
 
 @media (max-width: var.$medium) {

@@ -11,10 +11,12 @@ function SearchBar({ onSearch, onInvalidIp }) {
     }
 
     return (
-        <div className='search-bar__container'>
-            <input value={searchQuery} onChange={(e) => setSearchQuery(e.currentTarget.value)} placeholder="Type ip or domain..." />
-            {error && <div className='search-bar__validation-error'>You must enter valid Ip or Url</div>}
-            <button className='btn search-btn' onClick={() => onSearch(searchQuery)} disabled={error}>SEARCH</button>
+        <div className='search-bar'>
+            <div className='search-bar__input-box'>
+                <input value={searchQuery} onChange={(e) => setSearchQuery(e.currentTarget.value)} placeholder="Type ip or domain..." />
+                {error && <div className='search-bar__input-box-validation-error'>You must enter valid Ip or Url</div>}
+            </div>
+            <button className='btn search-bar__btn' onClick={() => onSearch(searchQuery)} disabled={error}>SEARCH</button>
         </div>
     );
 }

@@ -4,10 +4,10 @@ function SearchList({ searchList }) {
 
     console.log(searchList)
 
-    if (searchList.length === 0) return <div className='search-list__container'>No searches yet</div>
+    if (searchList.length === 0) return <div className='search-list'>No searches yet</div>
 
     return (
-        <div className='search-list__container'>
+        <div className='search-list'>
             <h2>List of all searches:</h2>
             {searchList.map(item => {
                 return (

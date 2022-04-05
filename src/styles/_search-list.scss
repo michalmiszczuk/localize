@@ -1,6 +1,6 @@
 @use 'variables' as var;
 
-.search-list__container{
+.search-list{
     grid-column: list-start / list-end;
     grid-row: 1 / -1;
     background-color: var.$grid-item-background;
@@ -16,7 +16,7 @@
 }
 
 @media (max-width: var.$medium) {
-    .search-list__container{
+    .search-list{
         grid-column: 1 / -1;
         grid-row: 6 / 7;
     }

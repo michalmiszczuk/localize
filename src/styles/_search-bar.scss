@@ -1,34 +1,49 @@
 @use 'variables' as var;
 
-.search-bar__container{
+.search-bar{
     grid-column: map-start / info-end;
     display: flex;
     justify-content: space-evenly;
     position: relative;
 
-    input{
+    &__input-box{
         width: 50%;
-        border-radius: 5rem;
-        background-color: var.$grid-item-background;
-        border: none;
-        transition: all .2s;
-        color: inherit;
-        padding: 0 1rem;
-        font-size: 1rem;
 
-        &::placeholder{
-            color: var.$grey-2;
-        }
+        input{
+            width: 100%;
+            height: 100%;
+            border-radius: 5rem;
+            background-color: var.$grid-item-background;
+            border: none;
+            transition: all .2s;
+            color: inherit;
+            padding: 0 1rem;
+            font-size: 1rem;
     
-        &:focus, :active{
-            outline: none;
-            box-shadow: inset 0 0 2px 2px var.$secondary;
+            &::placeholder{
+                color: var.$grey-2;
+            }
+        
+            &:focus, :active{
+                outline: none;
+                box-shadow: inset 0 0 2px 2px var.$secondary;
+            }
+        } 
+        &-validation-error{
+            position: absolute;
+            bottom: -50%;
+            width: 50%;
+            background-color: darkred;
+            text-align: center;
+            font-size: 1rem;
+            z-index: 20;
+            border-radius: 1rem;
+            animation: show-up 1s forwards;
         }
+      
     }
-
-
-
-    .search-btn{
+   
+    &__btn{
         background-color: var.$primary-dark;
         color: inherit;
         &:hover{
@@ -40,16 +55,8 @@
             box-shadow: inset 0 0 2px 2px var.$secondary;
         }
     }
-    .search-bar__validation-error{
-        position: absolute;
-        bottom: -50%;
-        width: 100%;
-        background-color: darkred;
-        text-align: center;
-        font-size: 1rem;
-        z-index: 20;
-        border-radius: 1rem;
-    }
+
+  
 }
 
 @media (max-width: var.$medium) {

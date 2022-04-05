@@ -3,12 +3,12 @@ import React from 'react';
 function LocationInfo({ location, gridPosition, header, fallbackMsg }) {
 
     if (!location) return (
-        <div className={`location-info__container ${gridPosition}`}>
+        <div className={`location-info ${gridPosition}`}>
             <span className='loading-animation'>{fallbackMsg}</span>
         </div>
     )
     return (
-        <div className={`location-info__container ${gridPosition}`}>
+        <div className={`location-info ${gridPosition}`}>
             <h2>{header}</h2>
             <ul>
                 <li>Continent: {location.continent_name}</li>

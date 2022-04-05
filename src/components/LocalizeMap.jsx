@@ -5,7 +5,7 @@ import { Map, Marker } from "pigeon-maps"
 function LocalizeMap({ gridPosition, header, location, fallbackMsg }) {
 
     if (!location) return (
-        <div className={`map__container ${gridPosition}`}>
+        <div className={`map ${gridPosition}`}>
             <span className='loading-animation'>{fallbackMsg}</span>
         </div>
     )
@@ -14,7 +14,7 @@ function LocalizeMap({ gridPosition, header, location, fallbackMsg }) {
 
     return (
 
-        <div className={`${gridPosition} map__container`}>
+        <div className={`${gridPosition} map`}>
             <h2 className='map__header'>{header}</h2>
             <Map center={coords} defaultZoom={12}>
                 <Marker width={50} anchor={coords} />

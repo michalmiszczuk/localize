@@ -1,4 +1,4 @@
-@use "variables" as v;
+@use "variables" as var;
 @use "localize-map";
 @use "location-info";
 @use "search-bar";
@@ -26,10 +26,10 @@ body {
     font-size: 62.5%; // 1rem = 10px
     font-weight: 300;
     line-height: 1.6;
-    background-image: linear-gradient(to right bottom, v.$primary-dark, v.$primary-light);
+    background-image: linear-gradient(to right bottom, var.$primary-dark, var.$primary-light);
     background-size: cover;
     background-repeat: no-repeat;
-    color: v.$grey-1;
+    color: var.$grey-1;
 }
 
 .container{
@@ -71,3 +71,29 @@ h2{
     width: 100%;
 }
 
+
+.btn{
+    font-weight: 200;
+    font-size: 1rem;
+    color: inherit;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5rem;
+    transition: all .2s;
+
+    &:focus, :active{
+        box-shadow: 0 0px 0px 5px var.$secondary;
+    }
+
+    &__toast-close{
+     background-color: var.$error-dark;
+     &:hover{
+         background-color: var.$error-dark-2;
+         cursor: pointer;
+     }
+     &:focus, :active{
+        box-shadow: 0 0px 0px 5px hsl(180, 90%, 50%, 0.7);
+        outline: none;
+    }
+    }
+}
