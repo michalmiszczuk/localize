@@ -1,20 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import validateQuery from '../validation/joi';
 
-function SearchBar({ onSearch, onInvalidIp }) {
+function SearchBar({ onSearch }) {
     const [searchQuery, setSearchQuery] = useState('')
-    const { error } = validateQuery(searchQuery)
+    const [error, setError] = useState('')
 
-    const handleOnSearch = (query) => {
-        return;
-
+    const validate = (input) => {
+        const { error } = validateQuery(input)
+        setError(error)
     }
 
+
+    console.log(error)
     return (
         <div className='search-bar'>
             <div className='search-bar__input-box'>
-                <input value={searchQuery} onChange={(e) => setSearchQuery(e.currentTarget.value)} placeholder="Type ip or domain..." />
-                {error && <div className='search-bar__input-box-validation-error'>You must enter valid Ip or Url</div>}
+                <input
+                    onFocus={validate}
+                    onBlur={() => (setSearchQuery(''), setError(''))}
+                    value={searchQuery}
+                    onChange={(e) => (setSearchQuery(e.currentTarget.value), validate(searchQuery))}
+                    placeholder="Type ip or domain..."
+                />
+                {error && <div className='search-bar__input-box-validation-error'>You must enter valid IP or URL</div>}
             </div>
             <button className='btn search-bar__btn' onClick={() => onSearch(searchQuery)} disabled={error}>SEARCH</button>
         </div>

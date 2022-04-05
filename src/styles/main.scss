@@ -32,6 +32,7 @@ body {
     color: var.$grey-1;
 }
 
+// main grid container for the entire app 
 .container{
     min-height: 100vh;
     padding: 10vh 5vw;
@@ -54,6 +55,7 @@ body {
     }
 }
 
+// styling of common elements
 
 h2{
     font-size: 1rem;
@@ -78,22 +80,5 @@ h2{
     color: inherit;
     padding: 1rem 2rem;
     border: none;
-    border-radius: 5rem;
     transition: all .2s;
-
-    &:focus, :active{
-        box-shadow: 0 0px 0px 5px var.$secondary;
-    }
-
-    &__toast-close{
-     background-color: var.$error-dark;
-     &:hover{
-         background-color: var.$error-dark-2;
-         cursor: pointer;
-     }
-     &:focus, :active{
-        box-shadow: 0 0px 0px 5px hsl(180, 90%, 50%, 0.7);
-        outline: none;
-    }
-    }
 }

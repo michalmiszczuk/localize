@@ -20,5 +20,17 @@
     &__error-msg{
         margin-bottom: 1rem;
     }
+
+    &__btn{
+        background-color: var.$error-dark;
+        &:hover{
+            background-color: var.$error-dark-2;
+            cursor: pointer;
+        }
+        &:focus, :active{
+           box-shadow: 0 0px 0px 5px hsl(0,0%, 90%);
+           outline: none;
+       }
+       }
 }
 
