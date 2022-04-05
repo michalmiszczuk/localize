@@ -9,11 +9,13 @@ function LocalizeMap({ gridPosition, header, location, fallbackMsg }) {
             <span className='loading-animation'>{fallbackMsg}</span>
         </div>
     )
+
     const coords = [location.latitude, location.longitude]
 
     return (
 
-        <div className={`${gridPosition} map__container`} data-header={header}>
+        <div className={`${gridPosition} map__container`}>
+            <h2 className='map__header'>{header}</h2>
             <Map center={coords} defaultZoom={12}>
                 <Marker width={50} anchor={coords} />
             </Map>

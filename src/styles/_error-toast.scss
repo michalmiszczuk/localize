@@ -6,7 +6,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: hsl(0, 90%, 40%, 0.7);
+    background-color: var.$error-primary;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,15 +32,18 @@
     transition: all .2s;
 
     &:focus, :active{
-        outline: none;
         box-shadow: 0 0px 0px 5px var.$secondary;
     }
 
     &__toast-close{
-     background-color: hsl(0, 90%, 20%, 0.7);
+     background-color: var.$error-dark;
      &:hover{
-         background-color: hsl(0, 90%, 20%);
+         background-color: var.$error-dark-2;
          cursor: pointer;
      }
+     &:focus, :active{
+        box-shadow: 0 0px 0px 5px hsl(180, 90%, 50%, 0.7);
+        outline: none;
+    }
     }
 }

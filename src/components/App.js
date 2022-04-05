@@ -13,14 +13,16 @@ function App() {
   const [currentLocation, setCurrentLocation] = useState();
   const [searchList, setSearchList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState("dfsfsdf ");
 
   useEffect(() => {
     const fetchCoords = async () => {
       const data = await findMyCoordinates();
       setCurrentLocation(data);
     };
+    setIsLoading(true);
     fetchCoords();
+    setIsLoading(false);
   }, []);
 
   if (!currentLocation) return <Spinner />;

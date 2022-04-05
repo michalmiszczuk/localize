@@ -23,7 +23,6 @@
     height: 20rem;
 
     &__text{
-        font-size: 1.2rem;
         color: var.$grey-1;
         animation: loading-opacity 3s ease-in-out infinite;
     }
@@ -45,7 +44,7 @@
         }
         &--third{
             animation: rotate 1.5s ease-in-out infinite;
-            border-top: 0.3rem solid var.$accent-color;
+            border-top: 0.3rem solid var.$primary-light
         }
     }
   }

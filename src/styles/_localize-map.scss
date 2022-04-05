@@ -1,8 +1,6 @@
 @use 'variables' as var;
 
 .map-1, .map-2{
-    font-size: 1.2rem;
-    font-weight: 300;
     grid-column: map-start / map-end;
     background-color: var.$grid-item-background;
 }
@@ -12,17 +10,20 @@
     justify-content: center;
     align-items: center;
     position: relative;
+}
 
-    &:before{
-        content: attr(data-header);
-        position: absolute;
-        top: 0;
-        width: 100%;
-        text-align: center;
-        color: var.$grey-1;
-        background-color: var.$grid-item-background;
-        z-index: 10;
-    }
+.map__header{
+    position: absolute;
+    font-size: 1.2rem;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: var.$grey-1;
+    background-color: hsl(216, 40%, 10%, 0.6);
+    padding: 0.5rem 0;
+    z-index: 10;
 }
 
 @media (max-width: var.$medium) {
