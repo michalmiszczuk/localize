@@ -3,7 +3,7 @@ import axios from "axios";
 const apiKey = process.env.REACT_APP_API_KEY;
 
 async function findCoordinates(ip) {
-  const {data} = await axios.get(`http://api.ipstack.com/${ip}?access_key=${apiKey}&fields=main&hostname=1`);
+  const {data} = await axios.get(`https://api.ipstack.com/${ip}?access_key=${apiKey}&fields=main&hostname=1`);
   return data;
 }
 
