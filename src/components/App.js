@@ -13,7 +13,7 @@ function App() {
   const [currentLocation, setCurrentLocation] = useState();
   const [searchList, setSearchList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("dfsfsdf ");
+  const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
     const fetchCoords = async () => {
