@@ -75,7 +75,7 @@ h1{
     transition: all .2s;
 }
 
-@media (max-width: var.$medium-large) {
+@media (max-width: var.$medium) {
     .container{
         padding: 1rem;
         grid-template-columns: minmax(5rem, 1fr) minmax(5rem, 1fr);
@@ -89,7 +89,7 @@ h1{
 }   
 
 
-@media (max-width: var.$medium) {
+@media (max-width: var.$small) {
     .container{
         padding: 1rem;
         grid-template-columns: minmax(5rem, 1fr);

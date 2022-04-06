@@ -28,7 +28,7 @@
 }
 
 
-@media (max-width: var.$medium-large) {
+@media (max-width: var.$medium) {
     .map-1{
         grid-column: 1 / -1;
         grid-row: 2 / 3;
@@ -40,7 +40,7 @@
 }
 
 
-@media (max-width: var.$medium) {
+@media (max-width: var.$small) {
     .map-1{
         grid-column: 1 / -1;
         grid-row: 2 / 3;

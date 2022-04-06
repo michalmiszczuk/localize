@@ -60,7 +60,7 @@
 }
 
 
-@media (max-width: var.$medium-large) {
+@media (max-width: var.$medium) {
     .search-bar{
         grid-column: 1 / -1;
         grid-row: 1 / 2;
@@ -74,7 +74,7 @@
    
 }
 
-@media (max-width: var.$medium) {
+@media (max-width: var.$small) {
     .search-bar{
         grid-column: 1 / -1;
         grid-row: 1 / 2;

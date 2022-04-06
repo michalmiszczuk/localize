@@ -19,7 +19,7 @@
 }
 
 
-@media (max-width: var.$medium-large) {
+@media (max-width: var.$medium) {
     .location-1{
         grid-column: 1 / -1;
         grid-row: 3 / 4
@@ -31,7 +31,7 @@
 }
 
 
-@media (max-width: var.$medium) {
+@media (max-width: var.$small) {
     .location-1{
         grid-column: 1 / -1;
         grid-row: 3 / 4
