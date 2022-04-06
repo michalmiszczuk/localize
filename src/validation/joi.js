@@ -3,7 +3,11 @@ import Joi from "joi";
 // function that returns error if validation fails.
 export function validateQuery(searchQuery) {
   const IpUrlSchmea = Joi.object({
-    searchQuery: [Joi.string().uri(), Joi.string().ip(), Joi.string().hostname()],
+    searchQuery: [
+      Joi.string().uri().allow(""),
+      Joi.string().ip().allow(""),
+      Joi.string().hostname().allow(""),
+    ],
   });
 
   const queryError = IpUrlSchmea.validate({searchQuery});
