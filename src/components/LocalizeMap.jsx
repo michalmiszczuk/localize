@@ -1,7 +1,6 @@
 import React from 'react';
 import { Map, Marker } from "pigeon-maps"
 
-
 function LocalizeMap({ gridPosition, header, location, fallbackMsg }) {
 
     if (!location) return (
@@ -15,7 +14,7 @@ function LocalizeMap({ gridPosition, header, location, fallbackMsg }) {
     return (
 
         <div className={`${gridPosition} map`}>
-            <h2 className='map__header'>{header}</h2>
+            <h1 className='map__header'>{header}</h1>
             <Map center={coords} defaultZoom={12}>
                 <Marker width={50} anchor={coords} />
             </Map>

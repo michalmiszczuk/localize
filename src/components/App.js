@@ -24,7 +24,7 @@ function App() {
     fetchCoords();
     setIsLoading(false);
   }, []);
-  console.log(currentLocation);
+
   if (!currentLocation) return <Spinner />;
 
   const handleSearchOnMap = async query => {

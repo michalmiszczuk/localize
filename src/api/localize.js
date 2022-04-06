@@ -8,17 +8,9 @@ async function findCoordinates(ip) {
 }
 
 async function findMyCoordinates() {
-  // const {data} = await axios.get(`http://api.ipstack.com/check?access_key=${apiKey}&fields=main`);
-  // console.log(data);
-  // return data;
-  return {
-    city: "Wrocław",
-    continent_name: "Europe",
-    country_name: "Poland",
-    latitude: 51.1148910522,
-    longitude: 17.038040164,
-    zip: "50-124",
-  };
+  const {data} = await axios.get(`http://api.ipstack.com/check?access_key=${apiKey}&fields=main`);
+  console.log(data);
+  return data;
 }
 
 export {findMyCoordinates, findCoordinates};

@@ -8,10 +8,15 @@
     text-align: center;
     display: flex;
     flex-flow: column;
+    font-size: 1.2rem;
    
-    
-    li{
-        list-style: none;
+    li{list-style: none;}
+}
+
+@media (max-width: var.$medium-large) {
+    .search-list{
+        grid-column: 1 / -1;
+        grid-row: 5 / 6;
     }
 }
 

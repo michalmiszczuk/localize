@@ -32,7 +32,7 @@
             position: absolute;
             bottom: -50%;
             width: 50%;
-            background-color: darkred;
+            background-color: var.$error-primary;
             text-align: center;
             font-size: 1rem;
             z-index: 20;
@@ -57,8 +57,21 @@
             cursor: default;
         }
     }
+}
 
-  
+
+@media (max-width: var.$medium-large) {
+    .search-bar{
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        padding: 1rem;
+        font-size: 1rem;
+
+        &__input-box-validation-error{
+            width: 48%;
+        }
+    }
+   
 }
 
 @media (max-width: var.$medium) {
@@ -67,4 +80,11 @@
         grid-row: 1 / 2;
         padding: 1rem;
     }
+
+    input{
+        &::placeholder{
+            font-size:0.8rem;
+        }
+    }
 }
+

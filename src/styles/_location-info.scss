@@ -7,8 +7,8 @@
     text-align: center;
     display: flex;
     flex-flow: column;
+    font-size: 1.2rem;
    
-    
     li{
         list-style: none;
     }
@@ -17,6 +17,19 @@
 .location-1, .location-2{
     grid-column: info-start / info-end;
 }
+
+
+@media (max-width: var.$medium-large) {
+    .location-1{
+        grid-column: 1 / -1;
+        grid-row: 3 / 4
+    }
+    .location-2{
+        grid-column: 1 / -1;
+        grid-column: 5 / 6;
+    }
+}
+
 
 @media (max-width: var.$medium) {
     .location-1{

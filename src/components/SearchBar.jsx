@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import validateQuery from '../validation/joi';
 
 function SearchBar({ onSearch }) {
     const [searchQuery, setSearchQuery] = useState('')
     const [isValidating, setIsValidating] = useState(false)
 
-    const { error } = isValidating ? validateQuery(searchQuery) : '';
+    const { error } = validateQuery(searchQuery)
 
     return (
         <div className='search-bar'>
@@ -17,9 +17,9 @@ function SearchBar({ onSearch }) {
                     onChange={(e) => setSearchQuery(e.currentTarget.value)}
                     placeholder="Type ip or domain..."
                 />
-                {error && <div className='search-bar__input-box-validation-error'>You must enter valid IP or URL</div>}
+                {error && isValidating && <div className='search-bar__input-box-validation-error'>You must enter valid IP or URL</div>}
             </div>
-            <button className='btn search-bar__btn' onClick={() => onSearch(searchQuery)} disabled={error || !isValidating}>SEARCH</button>
+            <button className='btn search-bar__btn' onClick={() => onSearch(searchQuery)} disabled={error || searchQuery === ''}>SEARCH</button>
         </div>
     );
 }

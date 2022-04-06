@@ -6,6 +6,8 @@
 @use "error-toast";
 @use "spinner";
 
+
+// general styles for the project
 *{
     margin: 0;
     padding: 0;
@@ -32,7 +34,14 @@ body {
     color: var.$grey-1;
 }
 
-// main grid container for the entire app 
+h1{
+    font-size: 1.4rem;
+    font-weight: 200;
+    text-transform: uppercase;
+
+}
+
+// main grid container for the app 
 .container{
     min-height: 100vh;
     padding: 10vh 5vw;
@@ -45,24 +54,7 @@ body {
     font-size: 1.6rem;
 }
 
-@media (max-width: 800px) {
-    .container{
-        padding: 1rem;
-        grid-template-columns: minmax(5rem, 1fr);
-        grid-template-rows: auto repeat(5, minmax(5rem, 1fr));
-        gap: 0.5rem;
-        font-size: 1rem;
-    }
-}
-
 // styling of common elements
-
-h2{
-    font-size: 1rem;
-    font-weight: 200;
-    text-transform: uppercase;
-
-}
 
 .loading-animation{
     animation: loading-opacity 3s infinite ease-in-out;
@@ -82,3 +74,36 @@ h2{
     border: none;
     transition: all .2s;
 }
+
+@media (max-width: var.$medium-large) {
+    .container{
+        padding: 1rem;
+        grid-template-columns: minmax(5rem, 1fr) minmax(5rem, 1fr);
+        grid-template-rows: auto repeat(4, minmax(5rem, 1fr));
+        gap: 0.5rem;
+        font-size: 1rem;
+    }
+    h1{
+        font-size: 1.2rem;
+    }
+}   
+
+
+@media (max-width: var.$medium) {
+    .container{
+        padding: 1rem;
+        grid-template-columns: minmax(5rem, 1fr);
+        grid-template-rows: auto repeat(5, minmax(5rem, 1fr));
+        gap: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .btn{
+        font-size: 0.8rem;
+    }
+}
+
+
+
+
+
