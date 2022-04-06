@@ -69,6 +69,7 @@
 
         &__input-box-validation-error{
             width: 48%;
+            bottom: -10%;;
         }
     }
    
@@ -79,12 +80,20 @@
         grid-column: 1 / -1;
         grid-row: 1 / 2;
         padding: 1rem;
-    }
 
-    input{
-        &::placeholder{
-            font-size:0.8rem;
+        input{
+            font-size: 0.8rem;
+
+            &::placeholder{
+                font-size:0.8rem;
+            }
+        }
+        &__input-box-validation-error{
+            min-width: fit-content;
+            padding: 0 1rem
         }
     }
+   
+
 }
 
