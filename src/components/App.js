@@ -27,7 +27,7 @@ function App() {
 
   if (!currentLocation) return <Spinner />;
 
-  const handleSearchOnMap = async query => {
+  const handleSearchLocation = async query => {
     try {
       setIsLoading(true);
       const data = await findCoordinates(query);
@@ -58,7 +58,7 @@ function App() {
         fallbackMsg="waiting for search..."
         gridPosition="lacation-1"
       />
-      <SearchBar onSearch={query => handleSearchOnMap(query)} />
+      <SearchBar onSearch={query => handleSearchLocation(query)} />
       <LocalizeMap
         gridPosition="map-2"
         header="last search"
